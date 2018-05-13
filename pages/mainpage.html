@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Главная страница</title>
+	<link 
+		rel = "stylesheet" 
+		type = "text/css" 
+		href = "../styles/mainstyle.css">
+	<link 
+		rel = 'icon'
+		type = 'ico/png'
+		href  = '../icons/favicon.png'>
+	<script 
+		type="text/javascript"
+		src="../JQueryCore.js">
+	</script>
+</head>
+<body onload="make_blocks()">
+	<!-- Website header and social links -->
+	<header class = "header">
+		<div class = "headerText">
+			<span> Портфолио, хех</span>
+		</div>
+		<div class = "linksBlock">
+			<!-- vk.com -->
+			<a href = "https://vk.com/veritaris" target = "tab">
+				<img src = "../icons/vkLogo.png" class = "sourceLinkImage">
+			</a>
+			<!-- facebook.com -->
+			<a href = "https://www.facebook.com/profile.php?id=100012236702896" target = "tab">
+				<img src = "../icons/facebookLogo.png" class = "sourceLinkImage">
+			</a>
+			<!-- instagram.com -->
+			<a href = "https://www.instagram.com/veritaris/" target = "tab">
+				<img src = "../icons/instagramLogo.png" class = "sourceLinkImage">
+			</a>
+			<!-- twitter.com -->
+			<a href ="https://twitter.com/kogerentum" target = "tab">
+				<img src = "../icons/twitterLogo.png" class = "sourceLinkImage">
+			</a>
+			<!-- error page -->
+			<a href = "errorPage.html">
+				<img src = "../icons/forbidden.png" class = "sourceLinkImage">
+			</a>
+		</div> 
+	</header>
+	<a name="top" id="anchor">
+	<!-- Go top button -->
+	<a href="#anchor" class="topLink">
+		<div class="goTopButton" id="goTopButton">
+		</div>
+	</a>
+	<!-- Content block -->
+	<div class = 'content_holder'>
+		<!-- Something about me -->
+		<div class="block" id="intro">
+			<div class="content">
+				<div class="me">
+					<img src="../images/Avatar.jpg" class="myImage">
+					<span>
+						Егор Айрих
+					</span>
+				</div>
+				<div class="myHobbies">
+					<a href="#programming">
+						<div class="hobbieLink">
+							<span>Программирование</span><br>
+							<img src="../icons/IT.png">
+						</div>
+					</a>
+					<a href="#science">
+						<div class="hobbieLink">
+							<span>Наука</span><br>
+							<img src="../icons/IT.png">
+						</div>
+					</a>
+					<a href="#studying">
+						<div class="hobbieLink">
+							<span>Учёба</span><br>
+							<img src="../icons/IT.png">
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+		<!-- My programming skills -->
+		<div class="block" id="programming">
+			<div>
+				
+			</div>
+		</div>
+		<!-- Taking part in science -->
+		<div class="block" id="science">
+			<div>
+				
+			</div>
+		</div>
+		<!-- About my studying -->
+		<div class="block" id="studying">
+			<div>
+				
+			</div>
+		</div>
+	</div>
+	<!-- Good scrool -->
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			$("a").click(function()
+			{
+				$("html, body").animate(
+				{
+					scrollTop: ($($(this).attr("href")).offset().top - 50) + "px"
+				},
+				{
+					duration: 500,
+					easing: "swing"
+				});
+			return false;
+			});
+		});
+	</script>
+	<!-- Height calculating -->
+	<script type="text/javascript">
+		function make_blocks()
+		{
+			var height = document.documentElement.clientHeight;
+			height = height - $("header.header").height();
+			$('div.block').height(height);
+			$('#intro').height(1.5*height);
+		}
+	</script>
+	<!-- Changing header size -->
+	<script type="text/javascript">
+		$(window).scroll(function()
+		{
+			if ($(window).scrollTop() > 400) 
+			{
+				make_blocks();
+				$('header').addClass('scroll');
+				$('div.goTopButton').addClass('scroll');
+				$('div.content').addClass('scroll');
+				$('#goTopButton').width('75px');
+			}
+			else 
+			{
+				make_blocks();
+				$('header').removeClass('scroll');
+				$('div.goTopButton').removeClass('scroll');
+				$('div.content').removeClass('scroll');
+				$('#goTopButton').width('100px');
+			}
+		});
+	</script>
+</body>
+</html>

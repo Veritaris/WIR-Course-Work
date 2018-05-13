@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Oooops!</title>
+	<link 
+		rel="stylesheet" 
+		type="text/css" 
+		href="../styles/mainstyle.css">
+</head>
+<body onload="refresh();">
+	<div class="errorDescription">
+		<h1 align="center">Oooops! Что-то пошло не так и сейчас данная страница недоступна</h1>
+		<h1 align="center">Посетите эту страницу позже</h1>
+		<h1 align="center">Вы будете перенаправлены на главную страницу через <span id='timer'></span></h1>
+		<img src="../icons/inDevelopment.png" 
+				style="width: 200px; height: 200px;">
+	</div>
+	<script>
+		var sec = 4;
+		function refresh()
+		{
+			sec--;
+			time = sec;
+			if(document.getElementById){timer.innerHTML = time;}
+			inter = setTimeout("refresh()", 1000);
+			if(sec == '0'){
+				clearInterval(inter);
+				window.location='mainpage.html';
+			}
+		}
+	</script>
+</body>
+</html>
