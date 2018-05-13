@@ -47,7 +47,7 @@
 	<a name="top" id="anchor">
 	<!-- Go top button -->
 	<a href="#anchor" class="topLink">
-		<div class="goTopButton" id="goTopButton">
+		<div class="goTopButton" id="goTopButton" href='#anchor'>
 		</div>
 	</a>
 	<!-- Content block -->
@@ -102,24 +102,39 @@
 			</div>
 		</div>
 	</div>
-	<!-- Good scrool -->
+	<!-- Good scrool v1.0 -->
 	<script type="text/javascript">
 		$(document).ready(function()
 		{
-			$("a").click(function()
+			$('a').click(function()
 			{
 				$("html, body").animate(
 				{
-					scrollTop: ($($(this).attr("href")).offset().top - 50) + "px"
+					scrollTop: ($($(this).attr("href")).offset().top) + "px"
 				},
 				{
-					duration: 500,
+					duration: 750,
 					easing: "swing"
 				});
 			return false;
 			});
 		});
 	</script>
+	<!-- Good scroll v2.0 -->
+	<!-- <script type="text/javascript">
+		$(document).ready(function()
+		{
+			$('.myHobbies a').click(function()
+			{
+				var scroll_el = $(this).attr('href');
+				if ($(scroll_el).length != )
+				{
+					$('html, body').animate({scrollTop: $(scroll_el).offset().top },1000);
+				}
+				return false;
+			});
+		});
+	</script> -->
 	<!-- Height calculating -->
 	<script type="text/javascript">
 		function make_blocks()
@@ -127,7 +142,7 @@
 			var height = document.documentElement.clientHeight;
 			height = height - $("header.header").height();
 			$('div.block').height(height);
-			$('#intro').height(1.5*height);
+			$('#intro').height(1.0*height);
 		}
 	</script>
 	<!-- Changing header size -->
